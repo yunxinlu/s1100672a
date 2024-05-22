@@ -87,11 +87,21 @@ fun FirstScreen(navController: NavController) {
             color = Color.Blue,
             modifier = Modifier
         )
+        Text(text = "瑪利亞基金會服務總覽",
+            modifier = Modifier)
+        Image(
+            painter = painterResource(id = R.drawable.service),
+            contentDescription = "",
+            modifier = Modifier
+        )
+        Button(onClick = {
+            navController.navigate("JumpSecond")
+        }) {
+            Text(text = "資科三B 呂云馨")
+        }
+
 
     }
-
-
-
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
