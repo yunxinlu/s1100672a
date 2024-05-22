@@ -1,5 +1,6 @@
 package com.example.s1100672a
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -17,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.s1100672a.ui.theme.S1100672aTheme
 
@@ -55,7 +58,39 @@ fun SecondScreen(navController: NavController) {
             color = Color.Red,
             modifier = Modifier)
 
+        Text(text = "關於App作者：",
+            modifier = Modifier)
+        Image(
+            painter = painterResource(id = R.drawable.me),
+            contentDescription = "",
+            modifier = Modifier.size(360.dp)
+        )
+        Button(
+
+            onClick = {
+
+                val activity
+                val intent = Intent(activity, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                context.startActivity(intent)
+                activity.finish()
+            })
+        {
+            Text(text = "服務總覽")
+
+        }
+
+
+
+
     }
+
+
+
+}
+
+
+}
 
 
 
